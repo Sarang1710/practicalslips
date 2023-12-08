@@ -15,11 +15,9 @@ public class DownloadFile {
 
 	@Test
 	public void download_test() throws InterruptedException{
-		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		HashMap<String, Object> chromePrefs = new HashMap<String,Object>();
 		String filePath = System.getProperty("user.dir");
-		chromePrefs.put("profile.default_content_settings.popups",0);
 		chromePrefs.put("download.default_directory", filePath);
 		options.setExperimentalOption("prefs", chromePrefs);
 		WebDriver driver = new ChromeDriver(options);

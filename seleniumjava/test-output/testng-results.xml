@@ -1,29 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-22T12:27:21 IST" name="Default suite" finished-at="2023-11-22T12:27:24 IST" duration-ms="2973">
+  <suite started-at="2023-12-01T12:39:33 IST" name="Default suite" finished-at="2023-12-01T12:39:54 IST" duration-ms="21609">
     <groups>
     </groups>
-    <test started-at="2023-11-22T12:27:21 IST" name="Default test" finished-at="2023-11-22T12:27:24 IST" duration-ms="2973">
-      <class name="pratcticalexam.slip11.ParallelTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:pratcticalexam.slip11.ParallelTest@3270d194]" started-at="2023-11-22T12:27:21 IST" name="setup" finished-at="2023-11-22T12:27:24 IST" duration-ms="2598" status="PASS">
+    <test started-at="2023-12-01T12:39:33 IST" name="Default test" finished-at="2023-12-01T12:39:54 IST" duration-ms="21609">
+      <class name="practicalexam.slip5.DataProvider">
+        <test-method signature="googleSearch(java.lang.String,java.lang.String)[pri:0, instance:practicalexam.slip5.DataProvider@38d8f54a]" started-at="2023-12-01T12:39:33 IST" name="googleSearch" data-provider="searchData" finished-at="2023-12-01T12:39:42 IST" duration-ms="8937" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Quitab Minar]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyLogo()[pri:0, instance:pratcticalexam.slip11.ParallelTest@3270d194]" started-at="2023-11-22T12:27:24 IST" name="verifyLogo" finished-at="2023-11-22T12:27:24 IST" duration-ms="99" status="PASS">
+        </test-method> <!-- googleSearch -->
+        <test-method signature="googleSearch(java.lang.String,java.lang.String)[pri:0, instance:practicalexam.slip5.DataProvider@38d8f54a]" started-at="2023-12-01T12:39:42 IST" name="googleSearch" data-provider="searchData" finished-at="2023-12-01T12:39:48 IST" duration-ms="6501" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Agra]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Taj Mahal]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLogo -->
-        <test-method signature="verifyPageTitle()[pri:0, instance:pratcticalexam.slip11.ParallelTest@3270d194]" started-at="2023-11-22T12:27:24 IST" name="verifyPageTitle" finished-at="2023-11-22T12:27:24 IST" duration-ms="19" status="PASS">
+        </test-method> <!-- googleSearch -->
+        <test-method signature="googleSearch(java.lang.String,java.lang.String)[pri:0, instance:practicalexam.slip5.DataProvider@38d8f54a]" started-at="2023-12-01T12:39:48 IST" name="googleSearch" data-provider="searchData" finished-at="2023-12-01T12:39:54 IST" duration-ms="6110" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Hyderabad]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Charminar]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPageTitle -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:pratcticalexam.slip11.ParallelTest@3270d194]" started-at="2023-11-22T12:27:24 IST" name="teardown" finished-at="2023-11-22T12:27:24 IST" duration-ms="200" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- pratcticalexam.slip11.ParallelTest -->
+        </test-method> <!-- googleSearch -->
+      </class> <!-- practicalexam.slip5.DataProvider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

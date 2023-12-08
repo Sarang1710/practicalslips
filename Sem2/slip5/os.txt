@@ -1,0 +1,32 @@
+Q.1 Write a C program to read all filenames in the current directory and display
+the inode number, number of links and size of each of the file.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+
+int main() {
+    DIR *dir;
+    struct dirent *ent;
+    struct stat file_stat;
+
+    if ((dir = opendir(".")) == NULL) {
+        perror("opendir");
+        exit(1);
+    }
+
+    printf("%-20s %-10s %-10s %-10s\n", "Filename", "Inode", "Links", "Size");
+
+    while ((ent = readdir(dir)) != NULL) {
+        if (stat(ent->d_name, &file_stat) < 0) {
+            perror("stat");
+            exit(1);
+        }
+        printf("%-20s %-10ld %-10ld %-10ld\n", ent->d_name, file_stat.st_ino, file_stat.st_nlink, file_stat.st_size);
+    }
+
+    closedir(dir);
+    return 0;
+}

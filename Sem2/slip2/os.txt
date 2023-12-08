@@ -1,0 +1,49 @@
+Q.1 Write a C program to create ‘n’ child processes. When all ‘n’ child processes
+terminates, display total cumulative time children spent in user and kernel mode.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[]) {
+    int n = 0;
+    int i, status;
+    struct timeval start_time, end_time, total_time;
+
+    if (argc == 2) {
+        n = atoi(argv[1]);
+    }
+    if (n <= 0) {
+        printf("Invalid number of child processes\n");
+        exit(1);
+    }
+
+    gettimeofday(&start_time, NULL);
+
+    for (i = 0; i < n; i++) {
+        pid_t pid = fork();
+
+        if (pid < 0) {
+            perror("fork");
+            exit(1);
+        } else if (pid == 0) {
+            // Child process
+            sleep(1);
+            exit(0);
+        }
+    }
+
+    while (wait(&status) > 0);
+
+    gettimeofday(&end_time, NULL);
+
+    timersub(&end_time, &start_time, &total_time);
+
+    printf("Total time in user mode: %ld.%06ld seconds\n", total_time.tv_sec, total_time.tv_usec);
+    printf("Total time in kernel mode: %ld.%06ld seconds\n", total_time.tv_sec, total_time.tv_usec);
+
+    return 0;
+}
